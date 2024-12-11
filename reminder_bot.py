@@ -37,34 +37,36 @@ def main():
     print("\033[92m¡Bienvenido al Bot de Recordatorios!\033[0m")
     print("Para salir en cualquier momento, escribe 'salir'.")
     
-    while True:
-        reminder_text = input("Ingrese el texto del recordatorio: ")
-        if reminder_text.lower() == "salir":
-            break
-
-        try:
-            # Ingreso de fecha
-            day = int(input("Ingrese el día del recordatorio (1-31): "))
-            month = int(input("Ingrese el mes del recordatorio (1-12): "))
-            year = int(input("Ingrese el año del recordatorio (ej. 2024): "))
-            hour = int(input("Ingrese la hora del recordatorio (0-23): "))
-            minute = int(input("Ingrese los minutos del recordatorio (0-59): "))
-            
-            # Verificación si es repetitivo o no
-            repeat_input = input("¿El recordatorio es repetitivo cada 10 minutos? (sí/no): ").lower()
-            repeat = repeat_input == "sí"
-
-            reminder_time = parse_date(day, month, year, hour, minute)
-            
-            # Agregar el recordatorio
-            add_reminder(reminders, reminder_text, reminder_time, repeat)
-            print(f"Recordatorio añadido: '{reminder_text}' para {reminder_time}")
+    reminder_text = input("Ingrese el texto del recordatorio: ")
+    if reminder_text.lower() == "salir":
+        return  # Sale inmediatamente si el texto es "salir"
+    
+    try:
+        # Ingreso de fecha
+        day = int(input("Ingrese el día del recordatorio (1-31): "))
+        month = int(input("Ingrese el mes del recordatorio (1-12): "))
+        year = int(input("Ingrese el año del recordatorio (ej. 2024): "))
+        hour = int(input("Ingrese la hora del recordatorio (0-23): "))
+        minute = int(input("Ingrese los minutos del recordatorio (0-59): "))
         
-        except Exception as e:
-            print(f"Error al agregar el recordatorio. Asegúrate de que los datos sean correctos: {e}")
-            continue
+        # Verificación si es repetitivo o no
+        repeat_input = input("¿El recordatorio es repetitivo cada 10 minutos? (sí/no): ").lower()
+        repeat = repeat_input == "sí"
 
-    # Comienza a comprobar los recordatorios
+        reminder_time = parse_date(day, month, year, hour, minute)
+        
+        # Agregar el recordatorio
+        add_reminder(reminders, reminder_text, reminder_time, repeat)
+        print(f"Recordatorio añadido: '{reminder_text}' para {reminder_time}")
+        
+        # El programa termina después de agregar el recordatorio
+        return  # Salir del programa
+
+    except Exception as e:
+        print(f"Error al agregar el recordatorio. Asegúrate de que los datos sean correctos: {e}")
+        return  # En caso de error, se sale del programa
+
+    # Comienza a comprobar los recordatorios (esto no se ejecutará porque el programa terminará antes)
     check_reminders(reminders)
 
 if __name__ == "__main__":
