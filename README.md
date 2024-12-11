@@ -15,5 +15,4 @@ A simple Python-based reminder bot that allows users to set reminders with speci
 
    ```bash
    git clone https://github.com/LukeDevNation/Python_Reminder_Bot.git
-   cd python-reminder-bot
    ```
