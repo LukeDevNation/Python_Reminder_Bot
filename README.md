@@ -13,29 +13,43 @@ A simple Python-based reminder bot that allows users to set reminders with speci
 
 Here are some screenshots of the application in action:
 
+
 ### Main Menu
 
-![Main Menu](screenshots/main_menu.png)
-_The main menu allows users to navigate through the bot's functionalities._
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b906b8eb-bfd9-4d5c-9c61-5c3ee0260749" alt="main_menu" width="600">
+</div>
+<p align="center">
+  _The main menu allows users to navigate through the bot's functionalities._
+</p>
 
-### Reminder Notification
+### Creating a Reminder
 
-![Reminder Notification](screenshots/reminder_notification.png)
-_A desktop notification example when a scheduled reminder time is reached._
-
-### Photo Capture Feature
-
-![Photo Capture](screenshots/photo_capture.png)
-_The bot uses your device's camera to capture photos for visual reminders._
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3e8a31eb-1d4a-4018-b4cc-ffa077c310da" alt="creating" width="600">
+</div>
+<p align="center">
+  _A step-by-step guide to create a new reminder._
+</p>
 
 ### Viewing Saved Reminders
 
-![View Reminders](screenshots/view_reminders.png)
-_List of all saved reminders displayed in the console._
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/89166c17-944c-462f-b62f-564256a4df19" alt="view_reminders" width="600">
+</div>
+<p align="center">
+  _List of all saved reminders displayed in the console._
+</p>
 
----
+### Reminder Notification
 
-To add screenshots to your project, place them in a folder named `screenshots` within the project directory. Ensure they are relevant and appropriately labeled for easy reference in the documentation.
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/ba282cde-3fc3-48c2-bc30-275ed83b0589" alt="Notification" width="600">
+</div>
+<p align="center">
+  _A desktop notification example when a scheduled reminder time is reached._
+</p>
+
 
 ## Installation
 
@@ -44,3 +58,16 @@ To add screenshots to your project, place them in a folder named `screenshots` w
    ```bash
    git clone https://github.com/LukeDevNation/Python_Reminder_Bot.git
    ```
+
+## Usage
+
+1. Run the bot and use the main menu to create, view, or delete reminders.
+2. Ensure the bot is running continuously to receive notifications at the specified time.
+
+## Contributing
+
+If you would like to contribute to this project, please fork the repository and submit a pull request. All contributions are welcome!
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more details.
