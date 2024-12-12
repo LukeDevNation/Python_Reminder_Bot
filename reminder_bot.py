@@ -1,6 +1,7 @@
 import time
 from datetime import datetime, timedelta
 from plyer import notification
+import threading
 
 # Function to convert the date string into a datetime object
 def parse_date(day, month, year, hour, minute):
@@ -39,7 +40,7 @@ def check_reminders(reminders):
                     reminder["time"] = reminder["time"] + timedelta(minutes=10)  # Repeat every 10 minutes
                 else:
                     reminders.remove(reminder)  # Remove the reminder after it has been triggered
-        time.sleep(60)  # Check every minute
+        time.sleep(1)  # Check every second
 
 # Function to display the main menu
 def show_main_menu():
@@ -55,6 +56,10 @@ def show_main_menu():
 # Main function
 def main():
     reminders = []
+
+    # Start the reminder checker in a separate thread
+    checker_thread = threading.Thread(target=check_reminders, args=(reminders,), daemon=True)
+    checker_thread.start()
 
     while True:
         show_main_menu()
@@ -133,9 +138,6 @@ def main():
         else:
             print("\033[91mInvalid option. Please enter a valid option (1-4).\033[0m")
             time.sleep(1)
-
-    # Start checking reminders (this will execute after exiting the main menu)
-    check_reminders(reminders)
 
 if __name__ == "__main__":
     main()
